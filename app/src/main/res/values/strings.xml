@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Muhnee</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="static_total_saldo">TOTAL SALDO</string>
+    <string name="print_rupiah">Rp.%1$s</string>
+    <string name="placeholder_rupiah">Rp.0</string>
+</resources>

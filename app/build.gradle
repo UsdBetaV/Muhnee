@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+ext {
+    kotlin_version = "1.7.0"
+    app_compat = "1.4.1"
+    material = "1.5.0"
+    constraint_layout = "2.1.3"
+    recycler_view = "1.2.1"
+    lifecycle = "2.4.1"
+    room = "2.4.2"
+    data_store = "1.0.0"
+    navigation = "2.4.2"
+    moshi = "1.9.3"
+    retrofit = "2.9.0"
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "beta.myapp.muhnee"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures{
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation("androidx.core:core-ktx:${kotlin_version}")
+    implementation("androidx.appcompat:appcompat:${app_compat}")
+    implementation("androidx.fragment:fragment-ktx:${app_compat}")
+    implementation("com.google.android.material:material:${material}")
+    implementation("androidx.constraintlayout:constraintlayout:${constraint_layout}")
+    implementation("androidx.recyclerview:recyclerview:${recycler_view}")
+
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${lifecycle}")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycle}")
+
+    implementation "androidx.room:room-runtime:${room}"
+    kapt "androidx.room:room-compiler:${room}"
+    implementation("androidx.room:room-ktx:${room}")
+
+    implementation("androidx.navigation:navigation-fragment-ktx:${navigation}")
+    implementation("androidx.navigation:navigation-ui-ktx:${navigation}")
+
+    implementation "androidx.datastore:datastore-preferences:${data_store}"
+
+    implementation("com.squareup.moshi:moshi-kotlin:${moshi}")
+    implementation("com.squareup.retrofit2:converter-moshi:${retrofit}")
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
